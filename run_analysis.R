@@ -36,6 +36,7 @@ if(file.exists("./UCI_HAR_Dataset.zip")){      ## check if the Samsung data is a
     fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
     download.file(fileUrl, destfile="./data/UCI_HAR_Dataset.zip", cacheOK = FALSE)  ## fetch the data from the source
     unzip(zipfile="./data/UCI_HAR_Dataset.zip", exdir="./data") ## and unzip in the local 'data' folder
+    rm(fileUrl)
 }
 
 path_ds <- file.path("./data/UCI HAR Dataset")
@@ -54,7 +55,7 @@ X <- rbind(XTrain, XTest)
 Activity <- rbind(yTrain, yTest)
 Subject <- rbind(STrain, STest)
 ## Remove temporary data objects from memory
-rm(fileUrl,XTrain,XTest,yTrain,yTest,STrain,STest)
+rm(XTrain,XTest,yTrain,yTest,STrain,STest)
 
 Features <- read.table(file.path(path_ds, "features.txt"), header=FALSE)    ## read the feature names
 names(X) <- Features$V2 ## match the 561-feature vector variables and feature names
