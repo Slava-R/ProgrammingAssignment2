@@ -53,4 +53,4 @@ the following variables:
 - Jerk (triaxial estimated body jerk component and its magnitude)
 - angularVelocity (triaxial angular velocity signal and its magnitude)
 - angularJerk (triaxial angular body jerk and its magnitude)
-- FFT- (Fast Fourier Transform into frequency domain for all the above except 'Gravity')
+- FFT- (Fast Fourier Transform into frequency domain for the above except 'Gravity' and 'angularJerk' triaxial signal)
