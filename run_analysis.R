@@ -28,9 +28,15 @@
 if(!file.exists("./data")){
     dir.create("./data")
 }
-fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download.file(fileUrl, destfile="./data/UCI_HAR_Dataset.zip", cacheOK = FALSE)  ## fetch the data from the source
-unzip(zipfile="./data/UCI_HAR_Dataset.zip", exdir="./data")                     ## and unzip in the local 'data' folder
+
+## Get the data file and unzip it internally
+if(file.exists("./UCI_HAR_Dataset.zip")){      ## check if the Samsung data is already in the working directory
+    unzip(zipfile="./UCI_HAR_Dataset.zip", exdir="./data")      ## and unzip the data file in the local 'data' folder
+} else {
+    fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+    download.file(fileUrl, destfile="./data/UCI_HAR_Dataset.zip", cacheOK = FALSE)  ## fetch the data from the source
+    unzip(zipfile="./data/UCI_HAR_Dataset.zip", exdir="./data") ## and unzip in the local 'data' folder
+}
 
 path_ds <- file.path("./data/UCI HAR Dataset")
 ## Read the unzipped data files into R variables
