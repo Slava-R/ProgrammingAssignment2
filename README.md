@@ -1,8 +1,8 @@
 ## datasciencecoursera
 ## The Getting and Cleaning Data course project repo
 
-## This repository contains 'run_analysis.R' code 
-that downloads the UCI's Human Activity Recognition (HAR) data set and transforms it 
+## This repository contains the 'run_analysis.R' script 
+that gets the UCI's Human Activity Recognition (HAR) data set and transforms it 
 according to the Getting and Cleaning Data Course Project (Coursera) instructions
 
 The details about the data and specific transformations performed by the script can be found 
