@@ -96,4 +96,4 @@ avgData <- aggregate(. ~activity+subject, subData, mean)        ## calculate var
 avgData <- avgData[order(avgData$activity, avgData$subject),]   ## sort the rows by activity
 rownames(avgData) <- NULL
 ## Export to tab-delimited file
-write.table(avgData,file="./data/UCI HAR Dataset/UCIHAR_tidy_dataset.txt",sep="\t",row.names=FALSE,col.names=FALSE)
+write.table(avgData,file="./data/UCI HAR Dataset/UCIHAR_tidy_dataset.txt",sep="\t",row.names=FALSE)
